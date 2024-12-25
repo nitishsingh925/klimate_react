@@ -4,9 +4,19 @@ import Header from "@/components/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-// Create a client
-const queryClient = new QueryClient();
+// Create a QueryClient instance with proper options
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 export const Route = createRootRoute({
   component: () => (
@@ -19,6 +29,7 @@ export const Route = createRootRoute({
           </main>
           <Footer />
         </div>
+        <ReactQueryDevtools />
         <TanStackRouterDevtools />
       </ThemeProvider>
     </QueryClientProvider>
