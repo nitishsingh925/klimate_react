@@ -1,3 +1,4 @@
+import CurrentWeather from "@/components/current-weather";
 import WeatherSkeleton from "@/components/loading.skeletion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -106,6 +107,21 @@ function Index() {
             className={`h-4 w-4 ${weatherQuery.isFetching ? "animate-spin" : ""}`}
           />
         </Button>
+      </div>
+
+      <div className="grid gpa-6">
+        <div>
+          <CurrentWeather
+            data={weatherQuery.data}
+            locationName={locationName}
+          />
+          {/* current weather */}
+          {/* hourly temprature */}
+        </div>
+        <div>
+          {/* details */}
+          {/* forcast */}
+        </div>
       </div>
     </div>
   );
