@@ -1,4 +1,5 @@
 import CurrentWeather from "@/components/current-weather";
+import HourlyTemprature from "@/components/hourly-temperature";
 import WeatherSkeleton from "@/components/loading.skeletion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -110,13 +111,12 @@ function Index() {
       </div>
 
       <div className="grid gpa-6">
-        <div>
+        <div className="flex flex-col lg:flex-row gap-4">
           <CurrentWeather
             data={weatherQuery.data}
             locationName={locationName}
           />
-          {/* current weather */}
-          {/* hourly temprature */}
+          <HourlyTemprature data={forecastQuery.data} />
         </div>
         <div>
           {/* details */}
