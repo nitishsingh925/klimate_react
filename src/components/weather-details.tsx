@@ -37,7 +37,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
     },
     {
       title: "Pressure",
-      value: `${main.pressure}hPa`,
+      value: `${main.pressure} hPa`,
       icon: Gauge,
       color: "text-purple-500",
     },
