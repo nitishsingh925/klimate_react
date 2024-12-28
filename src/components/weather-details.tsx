@@ -27,7 +27,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
       title: "Sunset",
       value: new Date(sys.sunset * 1000).toLocaleTimeString(),
       icon: Sunset,
-      color: "text-orange-500",
+      color: "text-blue-500",
     },
     {
       title: "Wind Direction",
