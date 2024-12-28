@@ -3,6 +3,7 @@ import HourlyTemprature from "@/components/hourly-temperature";
 import WeatherSkeleton from "@/components/loading.skeletion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import WeatherDetails from "@/components/weather-details";
 import { useGeolocation } from "@/hooks/use-geolocation";
 import {
   useForecastQuery,
@@ -119,7 +120,7 @@ function Index() {
           <HourlyTemprature data={forecastQuery.data} />
         </div>
         <div>
-          {/* details */}
+          <WeatherDetails data={weatherQuery.data} />
           {/* forcast */}
         </div>
       </div>
