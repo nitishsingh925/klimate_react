@@ -9,11 +9,11 @@ import {
   YAxis,
 } from "recharts";
 
-interface HourlyTempratureProps {
+interface HourlyTemperatureProps {
   data: ForecastData;
 }
 
-const HourlyTemprature = ({ data }: HourlyTempratureProps) => {
+const HourlyTemperature = ({ data }: HourlyTemperatureProps) => {
   const chartData = data.list.slice(0, 8).map((item) => ({
     time: new Date(item.dt * 1000).toLocaleString("en-IN", {
       hour: "numeric",
@@ -102,4 +102,4 @@ const HourlyTemprature = ({ data }: HourlyTempratureProps) => {
   );
 };
 
-export default HourlyTemprature;
+export default HourlyTemperature;

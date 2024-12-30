@@ -1,9 +1,10 @@
 import CurrentWeather from "@/components/current-weather";
-import HourlyTemprature from "@/components/hourly-temperature";
+import HourlyTemperature from "@/components/hourly-temperature";
 import WeatherSkeleton from "@/components/loading.skeletion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import WeatherDetails from "@/components/weather-details";
+import WeatherForecast from "@/components/weather-forecast";
 import { useGeolocation } from "@/hooks/use-geolocation";
 import {
   useForecastQuery,
@@ -111,17 +112,17 @@ function Index() {
         </Button>
       </div>
 
-      <div className="grid gpa-6">
+      <div className="grid gap-6">
         <div className="flex flex-col lg:flex-row gap-4">
           <CurrentWeather
             data={weatherQuery.data}
             locationName={locationName}
           />
-          <HourlyTemprature data={forecastQuery.data} />
+          <HourlyTemperature data={forecastQuery.data} />
         </div>
-        <div>
+        <div className="grid gap-6 md:grid-cols-2 items-start">
           <WeatherDetails data={weatherQuery.data} />
-          {/* forcast */}
+          <WeatherForecast data={forecastQuery.data} />
         </div>
       </div>
     </div>
