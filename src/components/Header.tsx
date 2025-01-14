@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import React from "react";
 import { useTheme } from "./context/theme-provider";
 import { Moon, Sun } from "lucide-react";
+import CitySearch from "./city-search";
 
 const Header: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -20,7 +21,7 @@ const Header: React.FC = () => {
           About
         </Link> */}
 
-        {/* search */}
+        <CitySearch />
         {/* theme toggle */}
         <div
           onClick={() => setTheme(isDark ? "light" : "dark")}
